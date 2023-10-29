@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+double* add_to_array(double* a, int n, double k)
+{
+  double *res = new double[n + 1];
+  for (int i = 0; i < n; i++)
+    res[i] = a[i];
+  res[n] = k;
+  return res;
+}
+
+int main()
+{
+  int n; cin >> n;
+  double *arr = new double[n];
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+  double k; cin >> k;
+  double *new_arr = add_to_array(arr, n, k);
+  for (int i = 0; i < n + 1; i++)
+    cout << new_arr[i] << " ";
+  delete[] arr;
+  delete[] new_arr;
+  return 0;
+}
