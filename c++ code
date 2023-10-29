@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int* even_indices(int* data, int size) {
+  int* res = new int[(size + 1) / 2];
+  for (int i = 0; i < size; i+=2)
+    res[i / 2] = data[i];
+  return res;
+}
+
+int main() {
+  int n;
+  cin >> n;
+  int *arr = new int[n];
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+  int* arr_new = even_indices(arr, n);
+  int size_new = (n + 1) / 2;
+  for (int i = 0; i < size_new; i++)
+    cout << arr_new[i] << " ";
+  delete[] arr; 
+  delete[] arr_new; 
+  return 0; 
+}  
