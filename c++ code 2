@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int* remove_last(int* data, int size) {
+  int *res = new int[size - 1];
+  for (int i = 0; i < size - 1; i++)
+    res[i] = data[i];
+  return res;
+}
+
+int main() {
+  int n;
+  cin >> n;
+  int* arr = new int[n];
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+  int* new_arr = remove_last(arr, n);
+  int new_n = n - 1;
+  for (int i = 0; i < new_n; i++)
+    cout << new_arr[i] << " ";
+  delete[] arr;
+  delete[] new_arr;
+  return 0;
+}
