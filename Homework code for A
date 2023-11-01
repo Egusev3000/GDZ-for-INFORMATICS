@@ -1,6 +1,7 @@
 #include <iostream>
 
 using namespace std;
+
 int* naturals(int n)
 {
   int* res = new int[n];
