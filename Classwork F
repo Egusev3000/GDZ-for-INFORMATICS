@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int* insert(int *a, int n, int x, int k)
+{
+  int* res = new int[n + 1];
+  for (int i = 0; i < x; i++)
+    res[i] = a[i];
+  res[x] = k;
+  for (int i = x + 1; i <= n; i++)
+    res[i] = a[i - 1];
+  return res;
+}
+
+int main(){
+  int n; cin >> n;
+  int *a = new int[n];
+  for (int i = 0; i < n; i++)
+    cin >> a[i];
+  int x, k; cin >> x >> k;
+  int* arr = insert(a, n, x, k);
+  for (int i = 0; i < n + 1; i++)
+    cout << arr[i] << " ";
+  delete[] a;
+  delete[] arr;
+  return 0; 
+}
